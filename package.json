@@ -4,7 +4,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "scaffold": "mst-gql"
+    "scaffold": "mst-gql",
+    "analyze": "source-map-explorer 'dist/assets/*.js'"
   },
   "dependencies": {
     "graphql-request": "^3.4.0",
@@ -24,6 +25,7 @@
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.2",
     "rollup-plugin-visualizer": "^5.5.1",
+    "source-map-explorer": "^2.5.2",
     "typescript": "^4.3.2",
     "vite": "^2.4.0"
   },
