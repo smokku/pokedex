@@ -1,6 +1,6 @@
 module.exports = {
   force: true,
   format: "ts",
-  input: "https://api.spacex.land/graphql/",
+  input: "https://beta.pokeapi.co/graphql/v1beta",
   outDir: "src/models"
 }

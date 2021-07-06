@@ -1,0 +1,29 @@
+/* This is a mst-gql generated file, don't modify it manually */
+/* eslint-disable */
+/* tslint:disable */
+import { types } from "mobx-state-tree"
+
+/**
+ * Typescript enum
+ */
+
+export enum PokemonV2ItemflavortextSelectColumn {
+  flavor_text="flavor_text",
+id="id",
+item_id="item_id",
+language_id="language_id",
+version_group_id="version_group_id"
+}
+
+/**
+* PokemonV2ItemflavortextSelectColumn
+ *
+ * select columns of table "pokemon_v2_itemflavortext"
+*/
+export const PokemonV2ItemflavortextSelectColumnEnumType = types.enumeration("PokemonV2ItemflavortextSelectColumn", [
+        "flavor_text", // column name
+  "id", // column name
+  "item_id", // column name
+  "language_id", // column name
+  "version_group_id", // column name
+      ])
