@@ -8,6 +8,7 @@
     "analyze": "source-map-explorer 'dist/assets/*.js'"
   },
   "dependencies": {
+    "antd": "^4.16.6",
     "graphql-request": "^3.4.0",
     "mobx": "^6.3.2",
     "mobx-react": "^7.2.0",
