@@ -5,48 +5,6 @@
 import { types } from "mobx-state-tree"
 import { QueryBuilder } from "mst-gql"
 import { ModelBase } from "./ModelBase"
-import { PokemonV2EncounterAggregateModel, PokemonV2EncounterAggregateModelType } from "./PokemonV2EncounterAggregateModel"
-import { PokemonV2EncounterAggregateModelSelector } from "./PokemonV2EncounterAggregateModel.base"
-import { PokemonV2EncounterModel, PokemonV2EncounterModelType } from "./PokemonV2EncounterModel"
-import { PokemonV2EncounterModelSelector } from "./PokemonV2EncounterModel.base"
-import { PokemonV2PokemonabilityAggregateModel, PokemonV2PokemonabilityAggregateModelType } from "./PokemonV2PokemonabilityAggregateModel"
-import { PokemonV2PokemonabilityAggregateModelSelector } from "./PokemonV2PokemonabilityAggregateModel.base"
-import { PokemonV2PokemonabilityModel, PokemonV2PokemonabilityModelType } from "./PokemonV2PokemonabilityModel"
-import { PokemonV2PokemonabilityModelSelector } from "./PokemonV2PokemonabilityModel.base"
-import { PokemonV2PokemonformAggregateModel, PokemonV2PokemonformAggregateModelType } from "./PokemonV2PokemonformAggregateModel"
-import { PokemonV2PokemonformAggregateModelSelector } from "./PokemonV2PokemonformAggregateModel.base"
-import { PokemonV2PokemonformModel, PokemonV2PokemonformModelType } from "./PokemonV2PokemonformModel"
-import { PokemonV2PokemonformModelSelector } from "./PokemonV2PokemonformModel.base"
-import { PokemonV2PokemongameindexAggregateModel, PokemonV2PokemongameindexAggregateModelType } from "./PokemonV2PokemongameindexAggregateModel"
-import { PokemonV2PokemongameindexAggregateModelSelector } from "./PokemonV2PokemongameindexAggregateModel.base"
-import { PokemonV2PokemongameindexModel, PokemonV2PokemongameindexModelType } from "./PokemonV2PokemongameindexModel"
-import { PokemonV2PokemongameindexModelSelector } from "./PokemonV2PokemongameindexModel.base"
-import { PokemonV2PokemonitemAggregateModel, PokemonV2PokemonitemAggregateModelType } from "./PokemonV2PokemonitemAggregateModel"
-import { PokemonV2PokemonitemAggregateModelSelector } from "./PokemonV2PokemonitemAggregateModel.base"
-import { PokemonV2PokemonitemModel, PokemonV2PokemonitemModelType } from "./PokemonV2PokemonitemModel"
-import { PokemonV2PokemonitemModelSelector } from "./PokemonV2PokemonitemModel.base"
-import { PokemonV2PokemonmoveAggregateModel, PokemonV2PokemonmoveAggregateModelType } from "./PokemonV2PokemonmoveAggregateModel"
-import { PokemonV2PokemonmoveAggregateModelSelector } from "./PokemonV2PokemonmoveAggregateModel.base"
-import { PokemonV2PokemonmoveModel, PokemonV2PokemonmoveModelType } from "./PokemonV2PokemonmoveModel"
-import { PokemonV2PokemonmoveModelSelector } from "./PokemonV2PokemonmoveModel.base"
-import { PokemonV2PokemonspeciesModel, PokemonV2PokemonspeciesModelType } from "./PokemonV2PokemonspeciesModel"
-import { PokemonV2PokemonspeciesModelSelector } from "./PokemonV2PokemonspeciesModel.base"
-import { PokemonV2PokemonspritesAggregateModel, PokemonV2PokemonspritesAggregateModelType } from "./PokemonV2PokemonspritesAggregateModel"
-import { PokemonV2PokemonspritesAggregateModelSelector } from "./PokemonV2PokemonspritesAggregateModel.base"
-import { PokemonV2PokemonspritesModel, PokemonV2PokemonspritesModelType } from "./PokemonV2PokemonspritesModel"
-import { PokemonV2PokemonspritesModelSelector } from "./PokemonV2PokemonspritesModel.base"
-import { PokemonV2PokemonstatAggregateModel, PokemonV2PokemonstatAggregateModelType } from "./PokemonV2PokemonstatAggregateModel"
-import { PokemonV2PokemonstatAggregateModelSelector } from "./PokemonV2PokemonstatAggregateModel.base"
-import { PokemonV2PokemonstatModel, PokemonV2PokemonstatModelType } from "./PokemonV2PokemonstatModel"
-import { PokemonV2PokemonstatModelSelector } from "./PokemonV2PokemonstatModel.base"
-import { PokemonV2PokemontypeAggregateModel, PokemonV2PokemontypeAggregateModelType } from "./PokemonV2PokemontypeAggregateModel"
-import { PokemonV2PokemontypeAggregateModelSelector } from "./PokemonV2PokemontypeAggregateModel.base"
-import { PokemonV2PokemontypeModel, PokemonV2PokemontypeModelType } from "./PokemonV2PokemontypeModel"
-import { PokemonV2PokemontypeModelSelector } from "./PokemonV2PokemontypeModel.base"
-import { PokemonV2PokemontypepastAggregateModel, PokemonV2PokemontypepastAggregateModelType } from "./PokemonV2PokemontypepastAggregateModel"
-import { PokemonV2PokemontypepastAggregateModelSelector } from "./PokemonV2PokemontypepastAggregateModel.base"
-import { PokemonV2PokemontypepastModel, PokemonV2PokemontypepastModelType } from "./PokemonV2PokemontypepastModel"
-import { PokemonV2PokemontypepastModelSelector } from "./PokemonV2PokemontypepastModel.base"
 import { RootStoreType } from "./index"
 
 
@@ -68,47 +26,47 @@ export const PokemonV2PokemonModelBase = ModelBase
     order: types.union(types.undefined, types.null, types.integer),
     pokemon_species_id: types.union(types.undefined, types.null, types.integer),
     /** An array relationship */
-    pokemon_v2_encounters: types.union(types.undefined, types.array(types.late((): any => PokemonV2EncounterModel))),
+    pokemon_v2_encounters: types.union(types.undefined, types.array(types.frozen())),
     /** An aggregate relationship */
-    pokemon_v2_encounters_aggregate: types.union(types.undefined, types.late((): any => PokemonV2EncounterAggregateModel)),
+    pokemon_v2_encounters_aggregate: types.union(types.undefined, types.frozen()),
     /** An array relationship */
-    pokemon_v2_pokemonabilities: types.union(types.undefined, types.array(types.late((): any => PokemonV2PokemonabilityModel))),
+    pokemon_v2_pokemonabilities: types.union(types.undefined, types.array(types.frozen())),
     /** An aggregate relationship */
-    pokemon_v2_pokemonabilities_aggregate: types.union(types.undefined, types.late((): any => PokemonV2PokemonabilityAggregateModel)),
+    pokemon_v2_pokemonabilities_aggregate: types.union(types.undefined, types.frozen()),
     /** An array relationship */
-    pokemon_v2_pokemonforms: types.union(types.undefined, types.array(types.late((): any => PokemonV2PokemonformModel))),
+    pokemon_v2_pokemonforms: types.union(types.undefined, types.array(types.frozen())),
     /** An aggregate relationship */
-    pokemon_v2_pokemonforms_aggregate: types.union(types.undefined, types.late((): any => PokemonV2PokemonformAggregateModel)),
+    pokemon_v2_pokemonforms_aggregate: types.union(types.undefined, types.frozen()),
     /** An array relationship */
-    pokemon_v2_pokemongameindices: types.union(types.undefined, types.array(types.late((): any => PokemonV2PokemongameindexModel))),
+    pokemon_v2_pokemongameindices: types.union(types.undefined, types.array(types.frozen())),
     /** An aggregate relationship */
-    pokemon_v2_pokemongameindices_aggregate: types.union(types.undefined, types.late((): any => PokemonV2PokemongameindexAggregateModel)),
+    pokemon_v2_pokemongameindices_aggregate: types.union(types.undefined, types.frozen()),
     /** An array relationship */
-    pokemon_v2_pokemonitems: types.union(types.undefined, types.array(types.late((): any => PokemonV2PokemonitemModel))),
+    pokemon_v2_pokemonitems: types.union(types.undefined, types.array(types.frozen())),
     /** An aggregate relationship */
-    pokemon_v2_pokemonitems_aggregate: types.union(types.undefined, types.late((): any => PokemonV2PokemonitemAggregateModel)),
+    pokemon_v2_pokemonitems_aggregate: types.union(types.undefined, types.frozen()),
     /** An array relationship */
-    pokemon_v2_pokemonmoves: types.union(types.undefined, types.array(types.late((): any => PokemonV2PokemonmoveModel))),
+    pokemon_v2_pokemonmoves: types.union(types.undefined, types.array(types.frozen())),
     /** An aggregate relationship */
-    pokemon_v2_pokemonmoves_aggregate: types.union(types.undefined, types.late((): any => PokemonV2PokemonmoveAggregateModel)),
+    pokemon_v2_pokemonmoves_aggregate: types.union(types.undefined, types.frozen()),
     /** An object relationship */
-    pokemon_v2_pokemonspecy: types.union(types.undefined, types.null, types.late((): any => PokemonV2PokemonspeciesModel)),
+    pokemon_v2_pokemonspecy: types.union(types.undefined, types.null, types.frozen()),
     /** An array relationship */
-    pokemon_v2_pokemonsprites: types.union(types.undefined, types.array(types.late((): any => PokemonV2PokemonspritesModel))),
+    pokemon_v2_pokemonsprites: types.union(types.undefined, types.array(types.frozen())),
     /** An aggregate relationship */
-    pokemon_v2_pokemonsprites_aggregate: types.union(types.undefined, types.late((): any => PokemonV2PokemonspritesAggregateModel)),
+    pokemon_v2_pokemonsprites_aggregate: types.union(types.undefined, types.frozen()),
     /** An array relationship */
-    pokemon_v2_pokemonstats: types.union(types.undefined, types.array(types.late((): any => PokemonV2PokemonstatModel))),
+    pokemon_v2_pokemonstats: types.union(types.undefined, types.array(types.frozen())),
     /** An aggregate relationship */
-    pokemon_v2_pokemonstats_aggregate: types.union(types.undefined, types.late((): any => PokemonV2PokemonstatAggregateModel)),
+    pokemon_v2_pokemonstats_aggregate: types.union(types.undefined, types.frozen()),
     /** An array relationship */
-    pokemon_v2_pokemontypepasts: types.union(types.undefined, types.array(types.late((): any => PokemonV2PokemontypepastModel))),
+    pokemon_v2_pokemontypepasts: types.union(types.undefined, types.array(types.frozen())),
     /** An aggregate relationship */
-    pokemon_v2_pokemontypepasts_aggregate: types.union(types.undefined, types.late((): any => PokemonV2PokemontypepastAggregateModel)),
+    pokemon_v2_pokemontypepasts_aggregate: types.union(types.undefined, types.frozen()),
     /** An array relationship */
-    pokemon_v2_pokemontypes: types.union(types.undefined, types.array(types.late((): any => PokemonV2PokemontypeModel))),
+    pokemon_v2_pokemontypes: types.union(types.undefined, types.array(types.frozen())),
     /** An aggregate relationship */
-    pokemon_v2_pokemontypes_aggregate: types.union(types.undefined, types.late((): any => PokemonV2PokemontypeAggregateModel)),
+    pokemon_v2_pokemontypes_aggregate: types.union(types.undefined, types.frozen()),
     weight: types.union(types.undefined, types.null, types.integer),
   })
   .views(self => ({
