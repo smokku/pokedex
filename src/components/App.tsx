@@ -1,10 +1,13 @@
 import React from "react";
 import { useFela } from "react-fela";
 
-import pokemonLogo from "./pokemon-logo.png";
+import PokemonCardsList from "../containers/PokemonCardsList";
+import pokemonLogo from "../pokemon-logo.png";
 
 export default function App() {
   const { css } = useFela();
+
+  const pokedexData = [];
 
   return (
     <main
@@ -20,7 +23,7 @@ export default function App() {
           width: "400px",
         })}
       />
-      <h1>Pokémon Pokédex</h1>
+      <PokemonCardsList pokedexData={pokedexData} />
     </main>
   );
 }
