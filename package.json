@@ -9,13 +9,15 @@
   },
   "dependencies": {
     "antd": "^4.16.6",
+    "fela": "^11.6.1",
     "graphql-request": "^3.4.0",
     "mobx": "^6.3.2",
     "mobx-react": "^7.2.0",
     "mobx-state-tree": "^5.0.2",
     "mst-gql": "^0.14.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-fela": "^11.6.1"
   },
   "devDependencies": {
     "@rollup/plugin-eslint": "^8.0.1",
@@ -36,6 +38,7 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
     "eslint-plugin-testing-library": "^4.9.0",
+    "fela-preset-dev": "^11.6.1",
     "husky": "^7.0.1",
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.2",
