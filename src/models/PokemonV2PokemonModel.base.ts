@@ -5,6 +5,10 @@
 import { types } from "mobx-state-tree"
 import { QueryBuilder } from "mst-gql"
 import { ModelBase } from "./ModelBase"
+import { PokemonV2PokemonspeciesModel, PokemonV2PokemonspeciesModelType } from "./PokemonV2PokemonspeciesModel"
+import { PokemonV2PokemonspeciesModelSelector } from "./PokemonV2PokemonspeciesModel.base"
+import { PokemonV2PokemontypeModel, PokemonV2PokemontypeModelType } from "./PokemonV2PokemontypeModel"
+import { PokemonV2PokemontypeModelSelector } from "./PokemonV2PokemontypeModel.base"
 import { RootStoreType } from "./index"
 
 
@@ -50,7 +54,7 @@ export const PokemonV2PokemonModelBase = ModelBase
     /** An aggregate relationship */
     pokemon_v2_pokemonmoves_aggregate: types.union(types.undefined, types.frozen()),
     /** An object relationship */
-    pokemon_v2_pokemonspecy: types.union(types.undefined, types.null, types.frozen()),
+    pokemon_v2_pokemonspecy: types.union(types.undefined, types.null, types.late((): any => PokemonV2PokemonspeciesModel)),
     /** An array relationship */
     pokemon_v2_pokemonsprites: types.union(types.undefined, types.array(types.frozen())),
     /** An aggregate relationship */
@@ -64,7 +68,7 @@ export const PokemonV2PokemonModelBase = ModelBase
     /** An aggregate relationship */
     pokemon_v2_pokemontypepasts_aggregate: types.union(types.undefined, types.frozen()),
     /** An array relationship */
-    pokemon_v2_pokemontypes: types.union(types.undefined, types.array(types.frozen())),
+    pokemon_v2_pokemontypes: types.union(types.undefined, types.array(types.late((): any => PokemonV2PokemontypeModel))),
     /** An aggregate relationship */
     pokemon_v2_pokemontypes_aggregate: types.union(types.undefined, types.frozen()),
     weight: types.union(types.undefined, types.null, types.integer),

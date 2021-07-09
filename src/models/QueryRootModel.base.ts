@@ -8,6 +8,20 @@ import { MSTGQLRef, QueryBuilder, withTypedRefs } from "mst-gql"
 import { ModelBase } from "./ModelBase"
 import { PokemonV2PokemonModel, PokemonV2PokemonModelType } from "./PokemonV2PokemonModel"
 import { PokemonV2PokemonModelSelector } from "./PokemonV2PokemonModel.base"
+import { PokemonV2PokemoncolorModel, PokemonV2PokemoncolorModelType } from "./PokemonV2PokemoncolorModel"
+import { PokemonV2PokemoncolorModelSelector } from "./PokemonV2PokemoncolorModel.base"
+import { PokemonV2PokemoncolornameModel, PokemonV2PokemoncolornameModelType } from "./PokemonV2PokemoncolornameModel"
+import { PokemonV2PokemoncolornameModelSelector } from "./PokemonV2PokemoncolornameModel.base"
+import { PokemonV2PokemonspeciesModel, PokemonV2PokemonspeciesModelType } from "./PokemonV2PokemonspeciesModel"
+import { PokemonV2PokemonspeciesModelSelector } from "./PokemonV2PokemonspeciesModel.base"
+import { PokemonV2PokemonspeciesflavortextModel, PokemonV2PokemonspeciesflavortextModelType } from "./PokemonV2PokemonspeciesflavortextModel"
+import { PokemonV2PokemonspeciesflavortextModelSelector } from "./PokemonV2PokemonspeciesflavortextModel.base"
+import { PokemonV2PokemonspeciesnameModel, PokemonV2PokemonspeciesnameModelType } from "./PokemonV2PokemonspeciesnameModel"
+import { PokemonV2PokemonspeciesnameModelSelector } from "./PokemonV2PokemonspeciesnameModel.base"
+import { PokemonV2PokemontypeModel, PokemonV2PokemontypeModelType } from "./PokemonV2PokemontypeModel"
+import { PokemonV2PokemontypeModelSelector } from "./PokemonV2PokemontypeModel.base"
+import { PokemonV2TypeModel, PokemonV2TypeModelType } from "./PokemonV2TypeModel"
+import { PokemonV2TypeModelSelector } from "./PokemonV2TypeModel.base"
 import { RootStoreType } from "./index"
 
 
@@ -680,17 +694,17 @@ export const QueryRootModelBase = withTypedRefs<Refs>()(ModelBase
     /** fetch data from the table: "pokemon_v2_pokemonability" using primary key columns */
     pokemon_v2_pokemonability_by_pk: types.union(types.undefined, types.null, types.frozen()),
     /** fetch data from the table: "pokemon_v2_pokemoncolor" */
-    pokemon_v2_pokemoncolor: types.union(types.undefined, types.array(types.frozen())),
+    pokemon_v2_pokemoncolor: types.union(types.undefined, types.array(types.late((): any => PokemonV2PokemoncolorModel))),
     /** fetch aggregated fields from the table: "pokemon_v2_pokemoncolor" */
     pokemon_v2_pokemoncolor_aggregate: types.union(types.undefined, types.frozen()),
     /** fetch data from the table: "pokemon_v2_pokemoncolor" using primary key columns */
-    pokemon_v2_pokemoncolor_by_pk: types.union(types.undefined, types.null, types.frozen()),
+    pokemon_v2_pokemoncolor_by_pk: types.union(types.undefined, types.null, types.late((): any => PokemonV2PokemoncolorModel)),
     /** fetch data from the table: "pokemon_v2_pokemoncolorname" */
-    pokemon_v2_pokemoncolorname: types.union(types.undefined, types.array(types.frozen())),
+    pokemon_v2_pokemoncolorname: types.union(types.undefined, types.array(types.late((): any => PokemonV2PokemoncolornameModel))),
     /** fetch aggregated fields from the table: "pokemon_v2_pokemoncolorname" */
     pokemon_v2_pokemoncolorname_aggregate: types.union(types.undefined, types.frozen()),
     /** fetch data from the table: "pokemon_v2_pokemoncolorname" using primary key columns */
-    pokemon_v2_pokemoncolorname_by_pk: types.union(types.undefined, types.null, types.frozen()),
+    pokemon_v2_pokemoncolorname_by_pk: types.union(types.undefined, types.null, types.late((): any => PokemonV2PokemoncolornameModel)),
     /** fetch data from the table: "pokemon_v2_pokemondexnumber" */
     pokemon_v2_pokemondexnumber: types.union(types.undefined, types.array(types.frozen())),
     /** fetch aggregated fields from the table: "pokemon_v2_pokemondexnumber" */
@@ -782,11 +796,11 @@ export const QueryRootModelBase = withTypedRefs<Refs>()(ModelBase
     /** fetch data from the table: "pokemon_v2_pokemonshapename" using primary key columns */
     pokemon_v2_pokemonshapename_by_pk: types.union(types.undefined, types.null, types.frozen()),
     /** An array relationship */
-    pokemon_v2_pokemonspecies: types.union(types.undefined, types.array(types.frozen())),
+    pokemon_v2_pokemonspecies: types.union(types.undefined, types.array(types.late((): any => PokemonV2PokemonspeciesModel))),
     /** An aggregate relationship */
     pokemon_v2_pokemonspecies_aggregate: types.union(types.undefined, types.frozen()),
     /** fetch data from the table: "pokemon_v2_pokemonspecies" using primary key columns */
-    pokemon_v2_pokemonspecies_by_pk: types.union(types.undefined, types.null, types.frozen()),
+    pokemon_v2_pokemonspecies_by_pk: types.union(types.undefined, types.null, types.late((): any => PokemonV2PokemonspeciesModel)),
     /** fetch data from the table: "pokemon_v2_pokemonspeciesdescription" */
     pokemon_v2_pokemonspeciesdescription: types.union(types.undefined, types.array(types.frozen())),
     /** fetch aggregated fields from the table: "pokemon_v2_pokemonspeciesdescription" */
@@ -794,17 +808,17 @@ export const QueryRootModelBase = withTypedRefs<Refs>()(ModelBase
     /** fetch data from the table: "pokemon_v2_pokemonspeciesdescription" using primary key columns */
     pokemon_v2_pokemonspeciesdescription_by_pk: types.union(types.undefined, types.null, types.frozen()),
     /** fetch data from the table: "pokemon_v2_pokemonspeciesflavortext" */
-    pokemon_v2_pokemonspeciesflavortext: types.union(types.undefined, types.array(types.frozen())),
+    pokemon_v2_pokemonspeciesflavortext: types.union(types.undefined, types.array(types.late((): any => PokemonV2PokemonspeciesflavortextModel))),
     /** fetch aggregated fields from the table: "pokemon_v2_pokemonspeciesflavortext" */
     pokemon_v2_pokemonspeciesflavortext_aggregate: types.union(types.undefined, types.frozen()),
     /** fetch data from the table: "pokemon_v2_pokemonspeciesflavortext" using primary key columns */
-    pokemon_v2_pokemonspeciesflavortext_by_pk: types.union(types.undefined, types.null, types.frozen()),
+    pokemon_v2_pokemonspeciesflavortext_by_pk: types.union(types.undefined, types.null, types.late((): any => PokemonV2PokemonspeciesflavortextModel)),
     /** fetch data from the table: "pokemon_v2_pokemonspeciesname" */
-    pokemon_v2_pokemonspeciesname: types.union(types.undefined, types.array(types.frozen())),
+    pokemon_v2_pokemonspeciesname: types.union(types.undefined, types.array(types.late((): any => PokemonV2PokemonspeciesnameModel))),
     /** fetch aggregated fields from the table: "pokemon_v2_pokemonspeciesname" */
     pokemon_v2_pokemonspeciesname_aggregate: types.union(types.undefined, types.frozen()),
     /** fetch data from the table: "pokemon_v2_pokemonspeciesname" using primary key columns */
-    pokemon_v2_pokemonspeciesname_by_pk: types.union(types.undefined, types.null, types.frozen()),
+    pokemon_v2_pokemonspeciesname_by_pk: types.union(types.undefined, types.null, types.late((): any => PokemonV2PokemonspeciesnameModel)),
     /** An array relationship */
     pokemon_v2_pokemonsprites: types.union(types.undefined, types.array(types.frozen())),
     /** An aggregate relationship */
@@ -818,11 +832,11 @@ export const QueryRootModelBase = withTypedRefs<Refs>()(ModelBase
     /** fetch data from the table: "pokemon_v2_pokemonstat" using primary key columns */
     pokemon_v2_pokemonstat_by_pk: types.union(types.undefined, types.null, types.frozen()),
     /** fetch data from the table: "pokemon_v2_pokemontype" */
-    pokemon_v2_pokemontype: types.union(types.undefined, types.array(types.frozen())),
+    pokemon_v2_pokemontype: types.union(types.undefined, types.array(types.late((): any => PokemonV2PokemontypeModel))),
     /** fetch aggregated fields from the table: "pokemon_v2_pokemontype" */
     pokemon_v2_pokemontype_aggregate: types.union(types.undefined, types.frozen()),
     /** fetch data from the table: "pokemon_v2_pokemontype" using primary key columns */
-    pokemon_v2_pokemontype_by_pk: types.union(types.undefined, types.null, types.frozen()),
+    pokemon_v2_pokemontype_by_pk: types.union(types.undefined, types.null, types.late((): any => PokemonV2PokemontypeModel)),
     /** fetch data from the table: "pokemon_v2_pokemontypepast" */
     pokemon_v2_pokemontypepast: types.union(types.undefined, types.array(types.frozen())),
     /** fetch aggregated fields from the table: "pokemon_v2_pokemontypepast" */
@@ -872,11 +886,11 @@ export const QueryRootModelBase = withTypedRefs<Refs>()(ModelBase
     /** fetch data from the table: "pokemon_v2_supercontesteffectflavortext" using primary key columns */
     pokemon_v2_supercontesteffectflavortext_by_pk: types.union(types.undefined, types.null, types.frozen()),
     /** fetch data from the table: "pokemon_v2_type" */
-    pokemon_v2_type: types.union(types.undefined, types.array(types.frozen())),
+    pokemon_v2_type: types.union(types.undefined, types.array(types.late((): any => PokemonV2TypeModel))),
     /** fetch aggregated fields from the table: "pokemon_v2_type" */
     pokemon_v2_type_aggregate: types.union(types.undefined, types.frozen()),
     /** fetch data from the table: "pokemon_v2_type" using primary key columns */
-    pokemon_v2_type_by_pk: types.union(types.undefined, types.null, types.frozen()),
+    pokemon_v2_type_by_pk: types.union(types.undefined, types.null, types.late((): any => PokemonV2TypeModel)),
     /** fetch data from the table: "pokemon_v2_typeefficacy" */
     pokemon_v2_typeefficacy: types.union(types.undefined, types.array(types.frozen())),
     /** fetch aggregated fields from the table: "pokemon_v2_typeefficacy" */

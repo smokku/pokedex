@@ -2,23 +2,35 @@ import React from "react";
 import { Card, Typography, Form, Switch } from "antd";
 import { useFela } from "react-fela";
 
-const { Text, Title } = Typography;
+import { PokemonV2PokemonModelType } from "../models";
+import { ThemeType } from "../theme";
 
-export default function PokemonCard({ pokemon }) {
-  const { css, theme } = useFela();
+const { Title } = Typography;
+
+export type PokemonCardProps = {
+  pokemon: PokemonV2PokemonModelType;
+};
+
+export default function PokemonCard({ pokemon }: PokemonCardProps) {
+  const { css, theme } = useFela<ThemeType>();
+
+  const color = pokemon.pokemon_v2_pokemonspecy.pokemon_v2_pokemoncolor.name;
 
   return (
     <Card
+      size="small"
+      title={pokemon.id}
       className={css({
-        minWidth: 275,
+        minWidth: "275px",
+        textAlign: "center",
       })}
       actions={[
         <Form.Item
-          className={css({
-            justifyContent: "center",
-          })}
           label="Captured"
           name="captured"
+          className={css({
+            paddingLeft: theme.spacing(1),
+          })}
         >
           <Switch
             checked={pokemon.captured}
@@ -27,25 +39,30 @@ export default function PokemonCard({ pokemon }) {
         </Form.Item>,
       ]}
     >
-      <Text
-        type="secondary"
-        className={css({
-          minWidth: 275,
-        })}
-      >
-        {pokemon.id}
-      </Text>
       <img
         alt={pokemon.name}
-        src={pokemon.imgUrl}
+        src={`https://img.pokemondb.net/sprites/bank/normal/${pokemon.name}.png`}
         className={css({
-          height: theme.spacing(16),
+          height: theme.spacing(8),
           borderRadius: 0,
-          marginBottom: theme.spacing(1),
         })}
       />
-      <Title level={2}>{pokemon.name}</Title>
-      <Text type="secondary">{pokemon.pokemonTypes.join(", ")}</Text>
+      <Card.Meta
+        title={
+          <Title
+            level={2}
+            style={{ color }}
+            className={css({
+              textShadow: "0 1px 3px rgba(0, 0, 0, 0.4)",
+            })}
+          >
+            {pokemon.name}
+          </Title>
+        }
+        description={pokemon.pokemon_v2_pokemontypes
+          ?.map((t) => t.pokemon_v2_type.name)
+          .join(", ")}
+      />
     </Card>
   );
 }

@@ -26,7 +26,7 @@ specifiers:
   husky: ^7.0.1
   lint-staged: ^11.0.0
   mobx: ^6.3.2
-  mobx-react: ^7.2.0
+  mobx-react-lite: ^3.2.0
   mobx-state-tree: ^5.0.2
   mst-gql: ^0.14.1
   prettier: ^2.3.2
@@ -46,7 +46,7 @@ dependencies:
   fela: 11.6.1
   graphql-request: 3.4.0
   mobx: 6.3.2
-  mobx-react: 7.2.0_7e8915efb8617305a7bfbed08f2cda09
+  mobx-react-lite: 3.2.0_7e8915efb8617305a7bfbed08f2cda09
   mobx-state-tree: 5.0.2_mobx@6.3.2
   mst-gql: 0.14.1_60ba09d0f456ff112679d931816a59ee
   react: 17.0.2
@@ -3855,25 +3855,6 @@ packages:
         optional: true
     dependencies:
       mobx: 6.3.2
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
-    dev: false
-
-  /mobx-react/7.2.0_7e8915efb8617305a7bfbed08f2cda09:
-    resolution: {integrity: sha512-KHUjZ3HBmZlNnPd1M82jcdVsQRDlfym38zJhZEs33VxyVQTvL77hODCArq6+C1P1k/6erEeo2R7rpE7ZeOL7dg==}
-    peerDependencies:
-      mobx: ^6.1.0
-      react: ^16.8.0 || ^17
-      react-dom: '*'
-      react-native: '*'
-    peerDependenciesMeta:
-      react-dom:
-        optional: true
-      react-native:
-        optional: true
-    dependencies:
-      mobx: 6.3.2
-      mobx-react-lite: 3.2.0_7e8915efb8617305a7bfbed08f2cda09
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     dev: false

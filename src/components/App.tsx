@@ -7,12 +7,12 @@ import pokemonLogo from "../pokemon-logo.png";
 export default function App() {
   const { css } = useFela();
 
-  const pokedexData = [];
-
   return (
     <main
       className={css({
-        textAlign: "center",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
       })}
     >
       <img
@@ -23,7 +23,7 @@ export default function App() {
           width: "400px",
         })}
       />
-      <PokemonCardsList pokedexData={pokedexData} />
+      <PokemonCardsList />
     </main>
   );
 }
