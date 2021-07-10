@@ -16,7 +16,7 @@ export type PokemonCardProps = {
 export default observer(({ pokemon }: PokemonCardProps) => {
   const { css, theme } = useFela<ThemeType>();
 
-  const color = pokemon.pokemon_v2_pokemonspecy.pokemon_v2_pokemoncolor.name;
+  const color = pokemon.pokemon_v2_pokemonspecy?.pokemon_v2_pokemoncolor.name;
 
   return (
     <Card
@@ -62,7 +62,7 @@ export default observer(({ pokemon }: PokemonCardProps) => {
           </Title>
         }
         description={pokemon.pokemon_v2_pokemontypes?.map(
-          ({ pokemon_v2_type: { name } }) => (
+          ({ pokemon_v2_type: { name } } = {}) => (
             <PokemonType type={name} key={name} />
           )
         )}

@@ -6,7 +6,7 @@ import { RendererProvider, ThemeProvider } from "react-fela";
 import validator from "fela-plugin-validator";
 import theme from "./theme";
 
-import { createHttpClient } from "mst-gql";
+import { createHttpClient, localStorageMixin } from "mst-gql";
 import { RootStore, StoreContext } from "./models";
 
 import "./index.css";
@@ -22,7 +22,19 @@ const renderer = createRenderer({
   ],
 });
 
-const rootStore = RootStore.create(undefined, {
+const LOCAL_STORAGE_KEY = "mst-rootstore";
+let snapshot = undefined;
+try {
+  snapshot = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || "{}");
+} catch (e) {
+  console.error(e);
+}
+
+const rootStore = RootStore.extend(
+  localStorageMixin({
+    storageKey: LOCAL_STORAGE_KEY,
+  })
+).create(snapshot, {
   gqlHttpClient: createHttpClient("https://beta.pokeapi.co/graphql/v1beta"),
 });
 

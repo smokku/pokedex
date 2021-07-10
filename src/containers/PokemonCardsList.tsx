@@ -20,7 +20,8 @@ export default observer(() => {
     )
   );
 
-  if (loading) return <Spin />;
+  if (loading && !data) return <Spin />;
+
   if (error || !data)
     return (
       <Result

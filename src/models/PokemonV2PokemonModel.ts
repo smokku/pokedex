@@ -14,7 +14,7 @@ export { selectFromPokemonV2Pokemon, pokemonV2PokemonModelPrimitives, PokemonV2P
  */
 export const PokemonV2PokemonModel = PokemonV2PokemonModelBase
   .props({
-    captured: types.optional(types.boolean, false),
+    captured: types.maybe(types.boolean),
   })
   .actions(self => ({
     // This is an auto-generated example action.
@@ -22,6 +22,6 @@ export const PokemonV2PokemonModel = PokemonV2PokemonModelBase
       console.log(JSON.stringify(self))
     },
     toggleCaptured() {
-      self.captured = !self.captured;
+      self.captured = !self.captured
     },
   }))
