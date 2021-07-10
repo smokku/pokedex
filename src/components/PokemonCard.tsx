@@ -3,6 +3,7 @@ import { observer } from "mobx-react-lite";
 import { Card, Typography, Form, Switch } from "antd";
 import { useFela } from "react-fela";
 
+import PokemonType from "./PokemonType";
 import { PokemonV2PokemonModelType } from "../models";
 import { ThemeType } from "../theme";
 
@@ -60,9 +61,11 @@ export default observer(({ pokemon }: PokemonCardProps) => {
             {pokemon.name}
           </Title>
         }
-        description={pokemon.pokemon_v2_pokemontypes
-          ?.map((t) => t.pokemon_v2_type.name)
-          .join(", ")}
+        description={pokemon.pokemon_v2_pokemontypes?.map(
+          ({ pokemon_v2_type: { name } }) => (
+            <PokemonType type={name} key={name} />
+          )
+        )}
       />
     </Card>
   );
