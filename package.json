@@ -38,7 +38,7 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
     "eslint-plugin-testing-library": "^4.9.0",
-    "fela-preset-dev": "^11.6.1",
+    "fela-plugin-validator": "^11.6.1",
     "husky": "^7.0.1",
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.2",

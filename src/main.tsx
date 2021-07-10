@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 import { createRenderer } from "fela";
 import { RendererProvider, ThemeProvider } from "react-fela";
-import devPreset from "fela-preset-dev";
+import validator from "fela-plugin-validator";
 import theme from "./theme";
 
 import { createHttpClient } from "mst-gql";
@@ -14,8 +14,11 @@ import App from "./components/App";
 
 const renderer = createRenderer({
   plugins: [
-    // other plugins,
-    ...devPreset,
+    validator({
+      logInvalid: true,
+      deleteInvalid: true,
+      useCSSLint: true,
+    }),
   ],
 });
 
