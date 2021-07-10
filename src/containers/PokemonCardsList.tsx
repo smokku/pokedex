@@ -1,8 +1,9 @@
 import React from "react";
 import { observer } from "mobx-react-lite";
-import { Space, Result, Card, Spin } from "antd";
+import { Space, Result, Card, Spin, Divider } from "antd";
 import { useFela } from "react-fela";
 
+import PokemonTypeSelector from "./PokemonTypeSelector";
 import PokemonCard from "../components/PokemonCard";
 
 import { useQuery } from "../models/reactUtils";
@@ -32,23 +33,42 @@ export default observer(() => {
 
   const { pokemon_v2_pokemon: pokemons } = data;
 
-  return pokemons.length > 0 ? (
-    <Space
-      wrap
-      className={css({
-        justifyContent: "center",
-      })}
-    >
-      {pokemons.map((pokemon) => (
-        <PokemonCard pokemon={pokemon} key={pokemon.id} />
-      ))}
-    </Space>
-  ) : (
-    <Card>
-      <Result
-        status="warning"
-        title="No results. Please try a different filter value."
-      />
-    </Card>
+  const [types, setTypes] = React.useState<string[]>([]);
+
+  if (pokemons.length === 0)
+    return (
+      <Card>
+        <Result
+          status="warning"
+          title="No results. Please try a different filter value."
+        />
+      </Card>
+    );
+
+  const filteredPokemons = types.length
+    ? pokemons.filter((p) => {
+        let pass = false;
+        p.pokemon_v2_pokemontypes?.forEach((t) => {
+          if (types.includes(t.pokemon_v2_type.name)) pass = true;
+        });
+        return pass;
+      })
+    : pokemons;
+
+  return (
+    <>
+      <PokemonTypeSelector onChange={setTypes} />
+      <Divider />
+      <Space
+        wrap
+        className={css({
+          justifyContent: "center",
+        })}
+      >
+        {filteredPokemons.map((pokemon) => (
+          <PokemonCard pokemon={pokemon} key={pokemon.id} />
+        ))}
+      </Space>
+    </>
   );
 });
