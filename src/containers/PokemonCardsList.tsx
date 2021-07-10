@@ -39,7 +39,7 @@ export default observer(() => {
       })}
     >
       {pokemons.map((pokemon) => (
-        <PokemonCard pokemon={pokemon} />
+        <PokemonCard pokemon={pokemon} key={pokemon.id} />
       ))}
     </Space>
   ) : (

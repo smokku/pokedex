@@ -1,4 +1,5 @@
 import React from "react";
+import { observer } from "mobx-react-lite";
 import { Card, Typography, Form, Switch } from "antd";
 import { useFela } from "react-fela";
 
@@ -11,7 +12,7 @@ export type PokemonCardProps = {
   pokemon: PokemonV2PokemonModelType;
 };
 
-export default function PokemonCard({ pokemon }: PokemonCardProps) {
+export default observer(({ pokemon }: PokemonCardProps) => {
   const { css, theme } = useFela<ThemeType>();
 
   const color = pokemon.pokemon_v2_pokemonspecy.pokemon_v2_pokemoncolor.name;
@@ -34,7 +35,7 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
         >
           <Switch
             checked={pokemon.captured}
-            // onChange={handleCapturedChange}
+            onChange={pokemon.toggleCaptured}
           />
         </Form.Item>,
       ]}
@@ -65,4 +66,4 @@ export default function PokemonCard({ pokemon }: PokemonCardProps) {
       />
     </Card>
   );
-}
+});
