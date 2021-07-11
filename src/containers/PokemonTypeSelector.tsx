@@ -6,9 +6,9 @@ import { useFela } from "react-fela";
 import { StoreContext } from "../models/reactUtils";
 import PokemonType from "../components/PokemonType";
 
-type TagRender = SelectProps<string[]>["tagRender"];
+type TagRenderFunc = SelectProps<string[]>["tagRender"];
 
-const tagRender: TagRender = (props) => {
+const tagRender: TagRenderFunc = (props) => {
   const { value, closable, onClose } = props;
   const onPreventMouseDown = (event: React.MouseEvent) => {
     event.preventDefault();
@@ -42,6 +42,7 @@ export default observer(({ onChange }: PokemonTypeSelectorProps) => {
     <Select
       mode="multiple"
       showArrow
+      allowClear
       tagRender={tagRender}
       placeholder="Pokémon type"
       value={selected}

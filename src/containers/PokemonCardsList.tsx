@@ -7,11 +7,13 @@ import PokemonTypeSelector from "./PokemonTypeSelector";
 import PokemonCard from "../components/PokemonCard";
 
 import { useQuery } from "../models/reactUtils";
+import PokemonNameSearch from "../components/PokemonNameSearch";
 
 export default observer(() => {
   const { css } = useFela();
 
   const [types, setTypes] = React.useState<string[]>([]);
+  const [names, setNames] = React.useState<string[]>([]);
 
   const { loading, data, error } = useQuery((store) =>
     store.queryPokemon_v2_pokemon({ limit: 123 }, (p) =>
@@ -33,7 +35,7 @@ export default observer(() => {
       />
     );
 
-  const { pokemon_v2_pokemon: pokemons } = data;
+  let { pokemon_v2_pokemon: pokemons } = data;
 
   if (pokemons.length === 0)
     return (
@@ -45,19 +47,30 @@ export default observer(() => {
       </Card>
     );
 
-  const filteredPokemons = types.length
-    ? pokemons.filter((p) => {
-        let pass = false;
-        p.pokemon_v2_pokemontypes?.forEach((t) => {
-          if (types.includes(t.pokemon_v2_type.name)) pass = true;
-        });
-        return pass;
-      })
-    : pokemons;
+  if (names.length > 0) {
+    pokemons = pokemons.filter((p) =>
+      names.reduce(
+        (ret: boolean, name) => ret || !!p.name?.includes(name),
+        false
+      )
+    );
+  }
+  if (types.length > 0) {
+    pokemons = pokemons.filter((p) => {
+      let pass = false;
+      p.pokemon_v2_pokemontypes?.forEach((t) => {
+        if (types.includes(t.pokemon_v2_type.name)) pass = true;
+      });
+      return pass;
+    });
+  }
 
   return (
     <>
-      <PokemonTypeSelector onChange={setTypes} />
+      <Space direction="horizontal">
+        <PokemonNameSearch onChange={setNames} />
+        <PokemonTypeSelector onChange={setTypes} />
+      </Space>
       <Divider />
       <Space
         wrap
@@ -65,7 +78,7 @@ export default observer(() => {
           justifyContent: "center",
         })}
       >
-        {filteredPokemons.map((pokemon) => (
+        {pokemons.map((pokemon) => (
           <PokemonCard pokemon={pokemon} key={pokemon.id} />
         ))}
       </Space>
