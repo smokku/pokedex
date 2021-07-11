@@ -42,7 +42,6 @@ export class PokemonV2PokemonspeciesnameModelSelector extends QueryBuilder {
   get language_id() { return this.__attr(`language_id`) }
   get name() { return this.__attr(`name`) }
   get pokemon_species_id() { return this.__attr(`pokemon_species_id`) }
-  pokemon_v2_language(builder?: string | PokemonV2LanguageModelSelector | ((selector: PokemonV2LanguageModelSelector) => PokemonV2LanguageModelSelector)) { return this.__child(`pokemon_v2_language`, PokemonV2LanguageModelSelector, builder) }
   pokemon_v2_pokemonspecy(builder?: string | PokemonV2PokemonspeciesModelSelector | ((selector: PokemonV2PokemonspeciesModelSelector) => PokemonV2PokemonspeciesModelSelector)) { return this.__child(`pokemon_v2_pokemonspecy`, PokemonV2PokemonspeciesModelSelector, builder) }
 }
 export function selectFromPokemonV2Pokemonspeciesname() {

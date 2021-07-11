@@ -8,6 +8,7 @@
     "analyze": "source-map-explorer 'dist/assets/*.js'"
   },
   "dependencies": {
+    "@types/ws": "^7.4.6",
     "antd": "^4.16.6",
     "fela": "^11.6.1",
     "graphql-request": "^3.4.0",
@@ -17,7 +18,9 @@
     "mst-gql": "^0.14.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-fela": "^11.6.1"
+    "react-fela": "^11.6.1",
+    "subscriptions-transport-ws": "^0.9.19",
+    "ws": "^7.5.3"
   },
   "devDependencies": {
     "@rollup/plugin-eslint": "^8.0.1",

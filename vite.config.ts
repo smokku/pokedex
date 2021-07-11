@@ -17,7 +17,7 @@ export default defineConfig({
           formatter: "unix",
         }),
         visualizer(),
-        analyze({ summaryOnly: true }),
+        // analyze({ summaryOnly: true }),
       ],
     },
   },

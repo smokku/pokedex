@@ -44,9 +44,7 @@ export class PokemonV2PokemonspeciesflavortextModelSelector extends QueryBuilder
   get language_id() { return this.__attr(`language_id`) }
   get pokemon_species_id() { return this.__attr(`pokemon_species_id`) }
   get version_id() { return this.__attr(`version_id`) }
-  pokemon_v2_language(builder?: string | PokemonV2LanguageModelSelector | ((selector: PokemonV2LanguageModelSelector) => PokemonV2LanguageModelSelector)) { return this.__child(`pokemon_v2_language`, PokemonV2LanguageModelSelector, builder) }
   pokemon_v2_pokemonspecy(builder?: string | PokemonV2PokemonspeciesModelSelector | ((selector: PokemonV2PokemonspeciesModelSelector) => PokemonV2PokemonspeciesModelSelector)) { return this.__child(`pokemon_v2_pokemonspecy`, PokemonV2PokemonspeciesModelSelector, builder) }
-  pokemon_v2_version(builder?: string | PokemonV2VersionModelSelector | ((selector: PokemonV2VersionModelSelector) => PokemonV2VersionModelSelector)) { return this.__child(`pokemon_v2_version`, PokemonV2VersionModelSelector, builder) }
 }
 export function selectFromPokemonV2Pokemonspeciesflavortext() {
   return new PokemonV2PokemonspeciesflavortextModelSelector()

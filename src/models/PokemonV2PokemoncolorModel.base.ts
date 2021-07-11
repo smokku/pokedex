@@ -43,9 +43,7 @@ export class PokemonV2PokemoncolorModelSelector extends QueryBuilder {
   get id() { return this.__attr(`id`) }
   get name() { return this.__attr(`name`) }
   pokemon_v2_pokemoncolornames(builder?: string | PokemonV2PokemoncolornameModelSelector | ((selector: PokemonV2PokemoncolornameModelSelector) => PokemonV2PokemoncolornameModelSelector)) { return this.__child(`pokemon_v2_pokemoncolornames`, PokemonV2PokemoncolornameModelSelector, builder) }
-  pokemon_v2_pokemoncolornames_aggregate(builder?: string | PokemonV2PokemoncolornameAggregateModelSelector | ((selector: PokemonV2PokemoncolornameAggregateModelSelector) => PokemonV2PokemoncolornameAggregateModelSelector)) { return this.__child(`pokemon_v2_pokemoncolornames_aggregate`, PokemonV2PokemoncolornameAggregateModelSelector, builder) }
   pokemon_v2_pokemonspecies(builder?: string | PokemonV2PokemonspeciesModelSelector | ((selector: PokemonV2PokemonspeciesModelSelector) => PokemonV2PokemonspeciesModelSelector)) { return this.__child(`pokemon_v2_pokemonspecies`, PokemonV2PokemonspeciesModelSelector, builder) }
-  pokemon_v2_pokemonspecies_aggregate(builder?: string | PokemonV2PokemonspeciesAggregateModelSelector | ((selector: PokemonV2PokemonspeciesAggregateModelSelector) => PokemonV2PokemonspeciesAggregateModelSelector)) { return this.__child(`pokemon_v2_pokemonspecies_aggregate`, PokemonV2PokemonspeciesAggregateModelSelector, builder) }
 }
 export function selectFromPokemonV2Pokemoncolor() {
   return new PokemonV2PokemoncolorModelSelector()

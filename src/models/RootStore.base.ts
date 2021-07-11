@@ -28,6 +28,7 @@ import { subscriptionRootModelPrimitives, SubscriptionRootModelSelector } from "
 
 
 import { OrderBy } from "./OrderByEnum"
+import { PokemonV2PokemonSelectColumn } from "./PokemonV2PokemonSelectColumnEnum"
 
 export type PokemonV2AbilityOrderBy = {
   generation_id?: OrderBy
@@ -12358,22 +12359,10 @@ export const RootStoreBase = withTypedRefs<Refs>()(MSTGQLStore
         ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemonModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
-    // fetch data from the table: "pokemon_v2_pokemoncolor"
-    queryPokemon_v2_pokemoncolor(variables: { distinctOn?: PokemonV2PokemoncolorSelectColumn[], limit?: number, offset?: number, orderBy?: PokemonV2PokemoncolorOrderBy[], where?: PokemonV2PokemoncolorBoolExp }, resultSelector: string | ((qb: PokemonV2PokemoncolorModelSelector) => PokemonV2PokemoncolorModelSelector) = pokemonV2PokemoncolorModelPrimitives.toString(), options: QueryOptions = {}) {
-      return self.query<{ pokemon_v2_pokemoncolor: PokemonV2PokemoncolorModelType[]}>(`query pokemon_v2_pokemoncolor($distinctOn: [pokemon_v2_pokemoncolor_select_column!], $limit: Int, $offset: Int, $orderBy: [pokemon_v2_pokemoncolor_order_by!], $where: pokemon_v2_pokemoncolor_bool_exp) { pokemon_v2_pokemoncolor(distinct_on: $distinctOn, limit: $limit, offset: $offset, order_by: $orderBy, where: $where) {
-        ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemoncolorModelSelector()).toString() : resultSelector}
-      } }`, variables, options)
-    },
     // fetch data from the table: "pokemon_v2_pokemoncolor" using primary key columns
     queryPokemon_v2_pokemoncolor_by_pk(variables: { id: number }, resultSelector: string | ((qb: PokemonV2PokemoncolorModelSelector) => PokemonV2PokemoncolorModelSelector) = pokemonV2PokemoncolorModelPrimitives.toString(), options: QueryOptions = {}) {
       return self.query<{ pokemon_v2_pokemoncolor_by_pk: PokemonV2PokemoncolorModelType}>(`query pokemon_v2_pokemoncolor_by_pk($id: Int!) { pokemon_v2_pokemoncolor_by_pk(id: $id) {
         ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemoncolorModelSelector()).toString() : resultSelector}
-      } }`, variables, options)
-    },
-    // fetch data from the table: "pokemon_v2_pokemoncolorname"
-    queryPokemon_v2_pokemoncolorname(variables: { distinctOn?: PokemonV2PokemoncolornameSelectColumn[], limit?: number, offset?: number, orderBy?: PokemonV2PokemoncolornameOrderBy[], where?: PokemonV2PokemoncolornameBoolExp }, resultSelector: string | ((qb: PokemonV2PokemoncolornameModelSelector) => PokemonV2PokemoncolornameModelSelector) = pokemonV2PokemoncolornameModelPrimitives.toString(), options: QueryOptions = {}) {
-      return self.query<{ pokemon_v2_pokemoncolorname: PokemonV2PokemoncolornameModelType[]}>(`query pokemon_v2_pokemoncolorname($distinctOn: [pokemon_v2_pokemoncolorname_select_column!], $limit: Int, $offset: Int, $orderBy: [pokemon_v2_pokemoncolorname_order_by!], $where: pokemon_v2_pokemoncolorname_bool_exp) { pokemon_v2_pokemoncolorname(distinct_on: $distinctOn, limit: $limit, offset: $offset, order_by: $orderBy, where: $where) {
-        ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemoncolornameModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
     // fetch data from the table: "pokemon_v2_pokemoncolorname" using primary key columns
@@ -12382,22 +12371,10 @@ export const RootStoreBase = withTypedRefs<Refs>()(MSTGQLStore
         ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemoncolornameModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
-    // An array relationship
-    queryPokemon_v2_pokemonspecies(variables: { distinctOn?: PokemonV2PokemonspeciesSelectColumn[], limit?: number, offset?: number, orderBy?: PokemonV2PokemonspeciesOrderBy[], where?: PokemonV2PokemonspeciesBoolExp }, resultSelector: string | ((qb: PokemonV2PokemonspeciesModelSelector) => PokemonV2PokemonspeciesModelSelector) = pokemonV2PokemonspeciesModelPrimitives.toString(), options: QueryOptions = {}) {
-      return self.query<{ pokemon_v2_pokemonspecies: PokemonV2PokemonspeciesModelType[]}>(`query pokemon_v2_pokemonspecies($distinctOn: [pokemon_v2_pokemonspecies_select_column!], $limit: Int, $offset: Int, $orderBy: [pokemon_v2_pokemonspecies_order_by!], $where: pokemon_v2_pokemonspecies_bool_exp) { pokemon_v2_pokemonspecies(distinct_on: $distinctOn, limit: $limit, offset: $offset, order_by: $orderBy, where: $where) {
-        ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemonspeciesModelSelector()).toString() : resultSelector}
-      } }`, variables, options)
-    },
     // fetch data from the table: "pokemon_v2_pokemonspecies" using primary key columns
     queryPokemon_v2_pokemonspecies_by_pk(variables: { id: number }, resultSelector: string | ((qb: PokemonV2PokemonspeciesModelSelector) => PokemonV2PokemonspeciesModelSelector) = pokemonV2PokemonspeciesModelPrimitives.toString(), options: QueryOptions = {}) {
       return self.query<{ pokemon_v2_pokemonspecies_by_pk: PokemonV2PokemonspeciesModelType}>(`query pokemon_v2_pokemonspecies_by_pk($id: Int!) { pokemon_v2_pokemonspecies_by_pk(id: $id) {
         ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemonspeciesModelSelector()).toString() : resultSelector}
-      } }`, variables, options)
-    },
-    // fetch data from the table: "pokemon_v2_pokemonspeciesflavortext"
-    queryPokemon_v2_pokemonspeciesflavortext(variables: { distinctOn?: PokemonV2PokemonspeciesflavortextSelectColumn[], limit?: number, offset?: number, orderBy?: PokemonV2PokemonspeciesflavortextOrderBy[], where?: PokemonV2PokemonspeciesflavortextBoolExp }, resultSelector: string | ((qb: PokemonV2PokemonspeciesflavortextModelSelector) => PokemonV2PokemonspeciesflavortextModelSelector) = pokemonV2PokemonspeciesflavortextModelPrimitives.toString(), options: QueryOptions = {}) {
-      return self.query<{ pokemon_v2_pokemonspeciesflavortext: PokemonV2PokemonspeciesflavortextModelType[]}>(`query pokemon_v2_pokemonspeciesflavortext($distinctOn: [pokemon_v2_pokemonspeciesflavortext_select_column!], $limit: Int, $offset: Int, $orderBy: [pokemon_v2_pokemonspeciesflavortext_order_by!], $where: pokemon_v2_pokemonspeciesflavortext_bool_exp) { pokemon_v2_pokemonspeciesflavortext(distinct_on: $distinctOn, limit: $limit, offset: $offset, order_by: $orderBy, where: $where) {
-        ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemonspeciesflavortextModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
     // fetch data from the table: "pokemon_v2_pokemonspeciesflavortext" using primary key columns
@@ -12406,34 +12383,16 @@ export const RootStoreBase = withTypedRefs<Refs>()(MSTGQLStore
         ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemonspeciesflavortextModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
-    // fetch data from the table: "pokemon_v2_pokemonspeciesname"
-    queryPokemon_v2_pokemonspeciesname(variables: { distinctOn?: PokemonV2PokemonspeciesnameSelectColumn[], limit?: number, offset?: number, orderBy?: PokemonV2PokemonspeciesnameOrderBy[], where?: PokemonV2PokemonspeciesnameBoolExp }, resultSelector: string | ((qb: PokemonV2PokemonspeciesnameModelSelector) => PokemonV2PokemonspeciesnameModelSelector) = pokemonV2PokemonspeciesnameModelPrimitives.toString(), options: QueryOptions = {}) {
-      return self.query<{ pokemon_v2_pokemonspeciesname: PokemonV2PokemonspeciesnameModelType[]}>(`query pokemon_v2_pokemonspeciesname($distinctOn: [pokemon_v2_pokemonspeciesname_select_column!], $limit: Int, $offset: Int, $orderBy: [pokemon_v2_pokemonspeciesname_order_by!], $where: pokemon_v2_pokemonspeciesname_bool_exp) { pokemon_v2_pokemonspeciesname(distinct_on: $distinctOn, limit: $limit, offset: $offset, order_by: $orderBy, where: $where) {
-        ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemonspeciesnameModelSelector()).toString() : resultSelector}
-      } }`, variables, options)
-    },
     // fetch data from the table: "pokemon_v2_pokemonspeciesname" using primary key columns
     queryPokemon_v2_pokemonspeciesname_by_pk(variables: { id: number }, resultSelector: string | ((qb: PokemonV2PokemonspeciesnameModelSelector) => PokemonV2PokemonspeciesnameModelSelector) = pokemonV2PokemonspeciesnameModelPrimitives.toString(), options: QueryOptions = {}) {
       return self.query<{ pokemon_v2_pokemonspeciesname_by_pk: PokemonV2PokemonspeciesnameModelType}>(`query pokemon_v2_pokemonspeciesname_by_pk($id: Int!) { pokemon_v2_pokemonspeciesname_by_pk(id: $id) {
         ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemonspeciesnameModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
-    // fetch data from the table: "pokemon_v2_pokemontype"
-    queryPokemon_v2_pokemontype(variables: { distinctOn?: PokemonV2PokemontypeSelectColumn[], limit?: number, offset?: number, orderBy?: PokemonV2PokemontypeOrderBy[], where?: PokemonV2PokemontypeBoolExp }, resultSelector: string | ((qb: PokemonV2PokemontypeModelSelector) => PokemonV2PokemontypeModelSelector) = pokemonV2PokemontypeModelPrimitives.toString(), options: QueryOptions = {}) {
-      return self.query<{ pokemon_v2_pokemontype: PokemonV2PokemontypeModelType[]}>(`query pokemon_v2_pokemontype($distinctOn: [pokemon_v2_pokemontype_select_column!], $limit: Int, $offset: Int, $orderBy: [pokemon_v2_pokemontype_order_by!], $where: pokemon_v2_pokemontype_bool_exp) { pokemon_v2_pokemontype(distinct_on: $distinctOn, limit: $limit, offset: $offset, order_by: $orderBy, where: $where) {
-        ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemontypeModelSelector()).toString() : resultSelector}
-      } }`, variables, options)
-    },
     // fetch data from the table: "pokemon_v2_pokemontype" using primary key columns
     queryPokemon_v2_pokemontype_by_pk(variables: { id: number }, resultSelector: string | ((qb: PokemonV2PokemontypeModelSelector) => PokemonV2PokemontypeModelSelector) = pokemonV2PokemontypeModelPrimitives.toString(), options: QueryOptions = {}) {
       return self.query<{ pokemon_v2_pokemontype_by_pk: PokemonV2PokemontypeModelType}>(`query pokemon_v2_pokemontype_by_pk($id: Int!) { pokemon_v2_pokemontype_by_pk(id: $id) {
         ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemontypeModelSelector()).toString() : resultSelector}
-      } }`, variables, options)
-    },
-    // fetch data from the table: "pokemon_v2_type"
-    queryPokemon_v2_type(variables: { distinctOn?: PokemonV2TypeSelectColumn[], limit?: number, offset?: number, orderBy?: PokemonV2TypeOrderBy[], where?: PokemonV2TypeBoolExp }, resultSelector: string | ((qb: PokemonV2TypeModelSelector) => PokemonV2TypeModelSelector) = pokemonV2TypeModelPrimitives.toString(), options: QueryOptions = {}) {
-      return self.query<{ pokemon_v2_type: PokemonV2TypeModelType[]}>(`query pokemon_v2_type($distinctOn: [pokemon_v2_type_select_column!], $limit: Int, $offset: Int, $orderBy: [pokemon_v2_type_order_by!], $where: pokemon_v2_type_bool_exp) { pokemon_v2_type(distinct_on: $distinctOn, limit: $limit, offset: $offset, order_by: $orderBy, where: $where) {
-        ${typeof resultSelector === "function" ? resultSelector(new PokemonV2TypeModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
     // fetch data from the table: "pokemon_v2_type" using primary key columns
@@ -12454,22 +12413,10 @@ export const RootStoreBase = withTypedRefs<Refs>()(MSTGQLStore
         ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemonModelSelector()).toString() : resultSelector}
       } }`, variables, onData, onError)
     },
-    // fetch data from the table: "pokemon_v2_pokemoncolor"
-    subscribePokemon_v2_pokemoncolor(variables: { distinctOn?: PokemonV2PokemoncolorSelectColumn[], limit?: number, offset?: number, orderBy?: PokemonV2PokemoncolorOrderBy[], where?: PokemonV2PokemoncolorBoolExp }, resultSelector: string | ((qb: PokemonV2PokemoncolorModelSelector) => PokemonV2PokemoncolorModelSelector) = pokemonV2PokemoncolorModelPrimitives.toString(), onData?: (item: any) => void, onError?: (error: Error) => void) {
-      return self.subscribe<{ pokemon_v2_pokemoncolor: PokemonV2PokemoncolorModelType[]}>(`subscription pokemon_v2_pokemoncolor($distinctOn: [pokemon_v2_pokemoncolor_select_column!], $limit: Int, $offset: Int, $orderBy: [pokemon_v2_pokemoncolor_order_by!], $where: pokemon_v2_pokemoncolor_bool_exp) { pokemon_v2_pokemoncolor(distinct_on: $distinctOn, limit: $limit, offset: $offset, order_by: $orderBy, where: $where) {
-        ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemoncolorModelSelector()).toString() : resultSelector}
-      } }`, variables, onData, onError)
-    },
     // fetch data from the table: "pokemon_v2_pokemoncolor" using primary key columns
     subscribePokemon_v2_pokemoncolor_by_pk(variables: { id: number }, resultSelector: string | ((qb: PokemonV2PokemoncolorModelSelector) => PokemonV2PokemoncolorModelSelector) = pokemonV2PokemoncolorModelPrimitives.toString(), onData?: (item: any) => void, onError?: (error: Error) => void) {
       return self.subscribe<{ pokemon_v2_pokemoncolor_by_pk: PokemonV2PokemoncolorModelType}>(`subscription pokemon_v2_pokemoncolor_by_pk($id: Int!) { pokemon_v2_pokemoncolor_by_pk(id: $id) {
         ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemoncolorModelSelector()).toString() : resultSelector}
-      } }`, variables, onData, onError)
-    },
-    // fetch data from the table: "pokemon_v2_pokemoncolorname"
-    subscribePokemon_v2_pokemoncolorname(variables: { distinctOn?: PokemonV2PokemoncolornameSelectColumn[], limit?: number, offset?: number, orderBy?: PokemonV2PokemoncolornameOrderBy[], where?: PokemonV2PokemoncolornameBoolExp }, resultSelector: string | ((qb: PokemonV2PokemoncolornameModelSelector) => PokemonV2PokemoncolornameModelSelector) = pokemonV2PokemoncolornameModelPrimitives.toString(), onData?: (item: any) => void, onError?: (error: Error) => void) {
-      return self.subscribe<{ pokemon_v2_pokemoncolorname: PokemonV2PokemoncolornameModelType[]}>(`subscription pokemon_v2_pokemoncolorname($distinctOn: [pokemon_v2_pokemoncolorname_select_column!], $limit: Int, $offset: Int, $orderBy: [pokemon_v2_pokemoncolorname_order_by!], $where: pokemon_v2_pokemoncolorname_bool_exp) { pokemon_v2_pokemoncolorname(distinct_on: $distinctOn, limit: $limit, offset: $offset, order_by: $orderBy, where: $where) {
-        ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemoncolornameModelSelector()).toString() : resultSelector}
       } }`, variables, onData, onError)
     },
     // fetch data from the table: "pokemon_v2_pokemoncolorname" using primary key columns
@@ -12478,22 +12425,10 @@ export const RootStoreBase = withTypedRefs<Refs>()(MSTGQLStore
         ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemoncolornameModelSelector()).toString() : resultSelector}
       } }`, variables, onData, onError)
     },
-    // An array relationship
-    subscribePokemon_v2_pokemonspecies(variables: { distinctOn?: PokemonV2PokemonspeciesSelectColumn[], limit?: number, offset?: number, orderBy?: PokemonV2PokemonspeciesOrderBy[], where?: PokemonV2PokemonspeciesBoolExp }, resultSelector: string | ((qb: PokemonV2PokemonspeciesModelSelector) => PokemonV2PokemonspeciesModelSelector) = pokemonV2PokemonspeciesModelPrimitives.toString(), onData?: (item: any) => void, onError?: (error: Error) => void) {
-      return self.subscribe<{ pokemon_v2_pokemonspecies: PokemonV2PokemonspeciesModelType[]}>(`subscription pokemon_v2_pokemonspecies($distinctOn: [pokemon_v2_pokemonspecies_select_column!], $limit: Int, $offset: Int, $orderBy: [pokemon_v2_pokemonspecies_order_by!], $where: pokemon_v2_pokemonspecies_bool_exp) { pokemon_v2_pokemonspecies(distinct_on: $distinctOn, limit: $limit, offset: $offset, order_by: $orderBy, where: $where) {
-        ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemonspeciesModelSelector()).toString() : resultSelector}
-      } }`, variables, onData, onError)
-    },
     // fetch data from the table: "pokemon_v2_pokemonspecies" using primary key columns
     subscribePokemon_v2_pokemonspecies_by_pk(variables: { id: number }, resultSelector: string | ((qb: PokemonV2PokemonspeciesModelSelector) => PokemonV2PokemonspeciesModelSelector) = pokemonV2PokemonspeciesModelPrimitives.toString(), onData?: (item: any) => void, onError?: (error: Error) => void) {
       return self.subscribe<{ pokemon_v2_pokemonspecies_by_pk: PokemonV2PokemonspeciesModelType}>(`subscription pokemon_v2_pokemonspecies_by_pk($id: Int!) { pokemon_v2_pokemonspecies_by_pk(id: $id) {
         ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemonspeciesModelSelector()).toString() : resultSelector}
-      } }`, variables, onData, onError)
-    },
-    // fetch data from the table: "pokemon_v2_pokemonspeciesflavortext"
-    subscribePokemon_v2_pokemonspeciesflavortext(variables: { distinctOn?: PokemonV2PokemonspeciesflavortextSelectColumn[], limit?: number, offset?: number, orderBy?: PokemonV2PokemonspeciesflavortextOrderBy[], where?: PokemonV2PokemonspeciesflavortextBoolExp }, resultSelector: string | ((qb: PokemonV2PokemonspeciesflavortextModelSelector) => PokemonV2PokemonspeciesflavortextModelSelector) = pokemonV2PokemonspeciesflavortextModelPrimitives.toString(), onData?: (item: any) => void, onError?: (error: Error) => void) {
-      return self.subscribe<{ pokemon_v2_pokemonspeciesflavortext: PokemonV2PokemonspeciesflavortextModelType[]}>(`subscription pokemon_v2_pokemonspeciesflavortext($distinctOn: [pokemon_v2_pokemonspeciesflavortext_select_column!], $limit: Int, $offset: Int, $orderBy: [pokemon_v2_pokemonspeciesflavortext_order_by!], $where: pokemon_v2_pokemonspeciesflavortext_bool_exp) { pokemon_v2_pokemonspeciesflavortext(distinct_on: $distinctOn, limit: $limit, offset: $offset, order_by: $orderBy, where: $where) {
-        ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemonspeciesflavortextModelSelector()).toString() : resultSelector}
       } }`, variables, onData, onError)
     },
     // fetch data from the table: "pokemon_v2_pokemonspeciesflavortext" using primary key columns
@@ -12502,34 +12437,16 @@ export const RootStoreBase = withTypedRefs<Refs>()(MSTGQLStore
         ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemonspeciesflavortextModelSelector()).toString() : resultSelector}
       } }`, variables, onData, onError)
     },
-    // fetch data from the table: "pokemon_v2_pokemonspeciesname"
-    subscribePokemon_v2_pokemonspeciesname(variables: { distinctOn?: PokemonV2PokemonspeciesnameSelectColumn[], limit?: number, offset?: number, orderBy?: PokemonV2PokemonspeciesnameOrderBy[], where?: PokemonV2PokemonspeciesnameBoolExp }, resultSelector: string | ((qb: PokemonV2PokemonspeciesnameModelSelector) => PokemonV2PokemonspeciesnameModelSelector) = pokemonV2PokemonspeciesnameModelPrimitives.toString(), onData?: (item: any) => void, onError?: (error: Error) => void) {
-      return self.subscribe<{ pokemon_v2_pokemonspeciesname: PokemonV2PokemonspeciesnameModelType[]}>(`subscription pokemon_v2_pokemonspeciesname($distinctOn: [pokemon_v2_pokemonspeciesname_select_column!], $limit: Int, $offset: Int, $orderBy: [pokemon_v2_pokemonspeciesname_order_by!], $where: pokemon_v2_pokemonspeciesname_bool_exp) { pokemon_v2_pokemonspeciesname(distinct_on: $distinctOn, limit: $limit, offset: $offset, order_by: $orderBy, where: $where) {
-        ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemonspeciesnameModelSelector()).toString() : resultSelector}
-      } }`, variables, onData, onError)
-    },
     // fetch data from the table: "pokemon_v2_pokemonspeciesname" using primary key columns
     subscribePokemon_v2_pokemonspeciesname_by_pk(variables: { id: number }, resultSelector: string | ((qb: PokemonV2PokemonspeciesnameModelSelector) => PokemonV2PokemonspeciesnameModelSelector) = pokemonV2PokemonspeciesnameModelPrimitives.toString(), onData?: (item: any) => void, onError?: (error: Error) => void) {
       return self.subscribe<{ pokemon_v2_pokemonspeciesname_by_pk: PokemonV2PokemonspeciesnameModelType}>(`subscription pokemon_v2_pokemonspeciesname_by_pk($id: Int!) { pokemon_v2_pokemonspeciesname_by_pk(id: $id) {
         ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemonspeciesnameModelSelector()).toString() : resultSelector}
       } }`, variables, onData, onError)
     },
-    // fetch data from the table: "pokemon_v2_pokemontype"
-    subscribePokemon_v2_pokemontype(variables: { distinctOn?: PokemonV2PokemontypeSelectColumn[], limit?: number, offset?: number, orderBy?: PokemonV2PokemontypeOrderBy[], where?: PokemonV2PokemontypeBoolExp }, resultSelector: string | ((qb: PokemonV2PokemontypeModelSelector) => PokemonV2PokemontypeModelSelector) = pokemonV2PokemontypeModelPrimitives.toString(), onData?: (item: any) => void, onError?: (error: Error) => void) {
-      return self.subscribe<{ pokemon_v2_pokemontype: PokemonV2PokemontypeModelType[]}>(`subscription pokemon_v2_pokemontype($distinctOn: [pokemon_v2_pokemontype_select_column!], $limit: Int, $offset: Int, $orderBy: [pokemon_v2_pokemontype_order_by!], $where: pokemon_v2_pokemontype_bool_exp) { pokemon_v2_pokemontype(distinct_on: $distinctOn, limit: $limit, offset: $offset, order_by: $orderBy, where: $where) {
-        ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemontypeModelSelector()).toString() : resultSelector}
-      } }`, variables, onData, onError)
-    },
     // fetch data from the table: "pokemon_v2_pokemontype" using primary key columns
     subscribePokemon_v2_pokemontype_by_pk(variables: { id: number }, resultSelector: string | ((qb: PokemonV2PokemontypeModelSelector) => PokemonV2PokemontypeModelSelector) = pokemonV2PokemontypeModelPrimitives.toString(), onData?: (item: any) => void, onError?: (error: Error) => void) {
       return self.subscribe<{ pokemon_v2_pokemontype_by_pk: PokemonV2PokemontypeModelType}>(`subscription pokemon_v2_pokemontype_by_pk($id: Int!) { pokemon_v2_pokemontype_by_pk(id: $id) {
         ${typeof resultSelector === "function" ? resultSelector(new PokemonV2PokemontypeModelSelector()).toString() : resultSelector}
-      } }`, variables, onData, onError)
-    },
-    // fetch data from the table: "pokemon_v2_type"
-    subscribePokemon_v2_type(variables: { distinctOn?: PokemonV2TypeSelectColumn[], limit?: number, offset?: number, orderBy?: PokemonV2TypeOrderBy[], where?: PokemonV2TypeBoolExp }, resultSelector: string | ((qb: PokemonV2TypeModelSelector) => PokemonV2TypeModelSelector) = pokemonV2TypeModelPrimitives.toString(), onData?: (item: any) => void, onError?: (error: Error) => void) {
-      return self.subscribe<{ pokemon_v2_type: PokemonV2TypeModelType[]}>(`subscription pokemon_v2_type($distinctOn: [pokemon_v2_type_select_column!], $limit: Int, $offset: Int, $orderBy: [pokemon_v2_type_order_by!], $where: pokemon_v2_type_bool_exp) { pokemon_v2_type(distinct_on: $distinctOn, limit: $limit, offset: $offset, order_by: $orderBy, where: $where) {
-        ${typeof resultSelector === "function" ? resultSelector(new PokemonV2TypeModelSelector()).toString() : resultSelector}
       } }`, variables, onData, onError)
     },
     // fetch data from the table: "pokemon_v2_type" using primary key columns

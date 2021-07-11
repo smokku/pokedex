@@ -40,7 +40,6 @@ export class PokemonV2PokemoncolornameModelSelector extends QueryBuilder {
   get language_id() { return this.__attr(`language_id`) }
   get name() { return this.__attr(`name`) }
   get pokemon_color_id() { return this.__attr(`pokemon_color_id`) }
-  pokemon_v2_language(builder?: string | PokemonV2LanguageModelSelector | ((selector: PokemonV2LanguageModelSelector) => PokemonV2LanguageModelSelector)) { return this.__child(`pokemon_v2_language`, PokemonV2LanguageModelSelector, builder) }
   pokemon_v2_pokemoncolor(builder?: string | PokemonV2PokemoncolorModelSelector | ((selector: PokemonV2PokemoncolorModelSelector) => PokemonV2PokemoncolorModelSelector)) { return this.__child(`pokemon_v2_pokemoncolor`, PokemonV2PokemoncolorModelSelector, builder) }
 }
 export function selectFromPokemonV2Pokemoncolorname() {

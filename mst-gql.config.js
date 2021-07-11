@@ -2061,7 +2061,7 @@ module.exports = {
     "PokemonV2PokedexdescriptionSelectColumn",
     "PokemonV2PokedexnameSelectColumn",
     "PokemonV2PokedexversiongroupSelectColumn",
-    "PokemonV2PokemonSelectColumn",
+    // "PokemonV2PokemonSelectColumn",
     "PokemonV2PokemonabilitySelectColumn",
     "PokemonV2PokemoncolorSelectColumn",
     "PokemonV2PokemoncolornameSelectColumn",
