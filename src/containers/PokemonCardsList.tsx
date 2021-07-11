@@ -11,6 +11,8 @@ import { useQuery } from "../models/reactUtils";
 export default observer(() => {
   const { css } = useFela();
 
+  const [types, setTypes] = React.useState<string[]>([]);
+
   const { loading, data, error } = useQuery((store) =>
     store.queryPokemon_v2_pokemon({ limit: 123 }, (p) =>
       p.name
@@ -32,8 +34,6 @@ export default observer(() => {
     );
 
   const { pokemon_v2_pokemon: pokemons } = data;
-
-  const [types, setTypes] = React.useState<string[]>([]);
 
   if (pokemons.length === 0)
     return (

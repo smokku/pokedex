@@ -13,13 +13,13 @@ import "./index.css";
 import App from "./components/App";
 
 const renderer = createRenderer({
-  plugins: [
-    validator({
-      logInvalid: true,
-      deleteInvalid: true,
-      useCSSLint: true,
-    }),
-  ],
+  // plugins: [
+  //   validator({
+  //     logInvalid: true,
+  //     deleteInvalid: true,
+  //     useCSSLint: true,
+  //   }),
+  // ],
 });
 
 const LOCAL_STORAGE_KEY = "mst-rootstore";

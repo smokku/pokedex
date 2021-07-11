@@ -31,4 +31,5 @@ jobs:
         with:
           dir: dist
           branch: gh-pages
+          name: Deployment Bot
           token: ${{ secrets.ACCESS_TOKEN }}
