@@ -6,6 +6,10 @@ Connects to https://beta.pokeapi.co/graphql/v1beta
 
 [mst-gql]: https://github.com/mobxjs/mst-gql
 
+## Live Demo
+
+https://smokku.github.io/pokedex/
+
 ### Kudos
 
 This is heavily inspired by http://tylerhawkins.info/pokedex-slash-graphql/build/
