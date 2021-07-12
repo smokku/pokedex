@@ -33,3 +33,4 @@ jobs:
           branch: gh-pages
           name: Deployment Bot
           token: ${{ secrets.ACCESS_TOKEN }}
+        continue-on-error: true
