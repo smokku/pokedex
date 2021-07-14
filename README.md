@@ -4,6 +4,8 @@ Example application utilising [mst-gql] (MobX State Tree + GraphQL) and Ant Desi
 
 Connects to https://beta.pokeapi.co/graphql/v1beta
 
+![screenshot](screenshot.png)
+
 [mst-gql]: https://github.com/mobxjs/mst-gql
 
 ## Live Demo
